@@ -19,7 +19,7 @@
 
 .w3-button.w3-bar-item {
     display: flex;
-    align-items: center; /* Vertically center items within the buttons */
+    align-items: center; /* Vertically center items within the buttons */ 
 }
 
 .w3-bar-item {
@@ -47,9 +47,15 @@
   
 .mySlides {
     opacity: 0.5; /* Adjust opacity as needed */
-    position: relative; /* Ensure the slides container has relative positioning */
-    z-index: -1; /* Ensure the slides are behind other elements */
+    position: relative; /* Set position to relative */
+    bottom: 0; /* Position the image at the bottom of its container */
+    width: 100%; /* Make the image span the entire width of its container */
+    z-index: 1; /* Ensure the image stays above other elements */
+    height: 70vh; /* Set the height to fill the viewport */
+    transition: transform 0.3s; /* Add transition effect for smoother position change */
+    object-fit: cover; /* Ensure the image covers its container while maintaining aspect ratio */
 }
+
 
 .floating-text {
     position: absolute;
@@ -92,7 +98,7 @@
 }
 
 .floating-carrot img {
-    width: 75px; /* Adjust the width of the logo */
+    width: 55px; /* Adjust the width of the logo */
     height: auto; /* Maintain aspect ratio */
     margin-right: 10px; /* Adjust the margin between the logo and text */
     padding: 50px 0; /* Add padding to the top, right, and left sides of the navigation bar */
@@ -101,6 +107,20 @@
 /* Add rounded corners to all elements with the class "rounded-square" */
 .rounded-square {
     border-radius: 10px; /* Adjust the value to change the roundness */
+}
+
+.w3-row-padding.w3-center {
+    background-color: #DDE8F0; /* Set the background color */
+    padding: 20px; /* Add padding to the section */
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Distribute space between items */
+}
+
+.w3-row-padding.w3-center article {
+    flex: 1;
+    margin: 0; /* Remove default margin */
+    padding: 100; /* Remove default padding */
+    width: calc(33.33% - 20px); /* Set the width of each article */
 }
 
 /* Add styles for smaller screens */

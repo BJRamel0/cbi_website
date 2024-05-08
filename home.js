@@ -1,4 +1,4 @@
-// home.js
+//home.js
 
 document.addEventListener("DOMContentLoaded", function() {
     // Select the carrot image
@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Add click event listener to the carrot image
     carrotImg.addEventListener('click', () => {
-        // Calculate the vertical position to scroll to (e.g., 1000 pixels down)
-        const scrollToY = 1000;
+        // Get the img_0654 element
+        const img0654 = document.querySelector('.mySlides');
+        // Calculate the vertical position to scroll to (bottom of img_0654)
+        const scrollToY = img0654.offsetTop + img0654.offsetHeight;
 
         // Calculate the current vertical position of the window
         const startY = window.pageYOffset || document.documentElement.scrollTop;
@@ -54,4 +56,19 @@ document.addEventListener("DOMContentLoaded", function() {
         // Start the scroll animation
         requestAnimationFrame(scrollAnimation);
     });
+
+    const img = document.querySelector('.mySlides');
+    const offset = img.offsetHeight;
+
+    // Function to handle scroll event
+    function handleScroll() {
+        if (window.pageYOffset > offset) {
+            img.classList.add('image-scrolled');
+        } else {
+            img.classList.remove('image-scrolled');
+        }
+    }
+
+    // Listen for scroll events
+    window.addEventListener('scroll', handleScroll);
 });
