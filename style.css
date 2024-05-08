@@ -1,18 +1,31 @@
+.nav-container {
+    padding: 15px; /* Add padding around the entire navigation bar */
+  }
+  
+
 .increased-height {
     height: 70px; /* Adjust height value as needed */
     display: flex;
     justify-content: space-between; /* Distribute items along the main axis */
     align-items: center; /* Vertically center items */
-    padding: 30px 20px 0; /* Add padding to the top, right, and left sides of the navigation bar */
+    padding: 20px 20px; /* Add padding to the top, right, and left sides of the navigation bar */
     background-color: #DDE8F0; /* Set the background color */
     font-family: "Glacial Indifference", sans-serif; /* Set the font to Glacial Indifference */
     position: relative; /* Add position relative */
     z-index: 3; /* Ensure the navigation bar is in the most front */
+    border-top-left-radius: 20px; /* Add rounded corner to top left */
+    border-top-right-radius: 20px; /* Add rounded corner to top right */
+}
+
+.w3-button.w3-bar-item {
+    display: flex;
+    align-items: center; /* Vertically center items within the buttons */
 }
 
 .w3-bar-item {
-    font-size: 200%; /* Increase font size */
-    font-weight: bold; /* Make text bold */
+    font-size: 185%; /* Increase font size */
+    font-weight: 700; /* Use a bolder font weight */
+    transition: font-size 0.8s ease; /* Add transition for smoother size change */
 }
 
 .increased-bar {
@@ -43,24 +56,56 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 65%;
+    height: 75%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: black;
-    font-weight: bold;
     z-index: 2; /* Ensure the text is above the image */
 }
   
 .floating-text h1 {
     font-family: "Glacial Indifference", sans-serif;
-    font-size: 90px;
+    font-size: 6vw; /* Set font size using viewport width */
+    font-weight: 700;
 }
 
 .floating-text img {
-    width: 130px; /* Adjust the width of the logo */
+    width: 15%; /* Adjust the width of the logo */
+    max-width: 130px; /* Set maximum width for the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust the margin between the logo and text */
+    padding: 2% 0; /* Add padding to the top and bottom of the navigation bar */
+}
+
+.floating-carrot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 185%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    z-index: 2; /* Ensure the text is above the image */
+}
+
+.floating-carrot img {
+    width: 75px; /* Adjust the width of the logo */
     height: auto; /* Maintain aspect ratio */
     margin-right: 10px; /* Adjust the margin between the logo and text */
     padding: 50px 0; /* Add padding to the top, right, and left sides of the navigation bar */
 }
-  
+
+/* Add rounded corners to all elements with the class "rounded-square" */
+.rounded-square {
+    border-radius: 10px; /* Adjust the value to change the roundness */
+}
+
+/* Add styles for smaller screens */
+@media screen and (max-width: 600px) {
+    .w3-bar-item {
+        font-size: 3vw; /* Adjust font size for smaller screens */
+    }
+}
