@@ -6,6 +6,8 @@
     padding: 30px 20px 0; /* Add padding to the top, right, and left sides of the navigation bar */
     background-color: #DDE8F0; /* Set the background color */
     font-family: "Glacial Indifference", sans-serif; /* Set the font to Glacial Indifference */
+    position: relative; /* Add position relative */
+    z-index: 3; /* Ensure the navigation bar is in the most front */
 }
 
 .w3-bar-item {
@@ -32,6 +34,8 @@
   
 .mySlides {
     opacity: 0.5; /* Adjust opacity as needed */
+    position: relative; /* Ensure the slides container has relative positioning */
+    z-index: -1; /* Ensure the slides are behind other elements */
 }
 
 .floating-text {
@@ -40,12 +44,12 @@
     left: 0;
     width: 100%;
     height: 65%;
-    z-index: 1; /* Ensure the text is above other elements */
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black; /* Set text color to black */
-    font-weight: bold; /* Make text bold */
+    color: black;
+    font-weight: bold;
+    z-index: 2; /* Ensure the text is above the image */
 }
   
 .floating-text h1 {
