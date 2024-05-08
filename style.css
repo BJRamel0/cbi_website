@@ -1,0 +1,62 @@
+.increased-height {
+    height: 70px; /* Adjust height value as needed */
+    display: flex;
+    justify-content: space-between; /* Distribute items along the main axis */
+    align-items: center; /* Vertically center items */
+    padding: 30px 20px 0; /* Add padding to the top, right, and left sides of the navigation bar */
+    background-color: #DDE8F0; /* Set the background color */
+    font-family: "Glacial Indifference", sans-serif; /* Set the font to Glacial Indifference */
+}
+
+.w3-bar-item {
+    font-size: 200%; /* Increase font size */
+    font-weight: bold; /* Make text bold */
+}
+
+.increased-bar {
+    height: 200px; /* Adjust height value as needed */
+    display: flex;
+    padding: 0 20px; /* Add padding to the left and right sides of the navigation bar */
+    background-color: #DDE8F0; /* Set the background color */
+}
+  
+.w3-bar-item {
+    margin-left: 10px; /* Adjust margin as needed for spacing */
+}
+  
+/* Style for the CBI item */
+.w3-bar-item:first-child {
+    margin-left: 0; /* Reset margin for the CBI item */
+    margin-right: auto; /* Push the CBI item as far left as possible */
+}
+  
+.mySlides {
+    opacity: 0.5; /* Adjust opacity as needed */
+}
+
+.floating-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65%;
+    z-index: 1; /* Ensure the text is above other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black; /* Set text color to black */
+    font-weight: bold; /* Make text bold */
+}
+  
+.floating-text h1 {
+    font-family: "Glacial Indifference", sans-serif;
+    font-size: 90px;
+}
+
+.floating-text img {
+    width: 130px; /* Adjust the width of the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust the margin between the logo and text */
+    padding: 50px 0; /* Add padding to the top, right, and left sides of the navigation bar */
+}
+  
