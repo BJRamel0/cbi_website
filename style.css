@@ -144,7 +144,7 @@ footer a {
 
 .organization-section {
     background-color: #DDE8F0;
-    padding: 40px 10px; /* Add padding to the top and bottom, and 20px to the left and right sides */
+    padding: 30px 10px; /* Add padding to the top and bottom, and 20px to the left and right sides */
 }
 
 .container {
@@ -207,6 +207,10 @@ a {
     .organization-info {
         flex-direction: column; /* Stack the items vertically */
         align-items: center; /* Center items horizontally */
+    }
+
+    .organization-info h2{
+        font-size: 7vw; /* Adjust font size for smaller screens */
     }
 
     .organization-image img {
