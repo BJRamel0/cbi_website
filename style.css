@@ -142,10 +142,76 @@ footer a {
     text-decoration: none; /* Remove underline from anchor tags within the footer */
 }
 
+.organization-section {
+    background-color: #DDE8F0;
+    padding: 40px 10px; /* Add padding to the top and bottom, and 20px to the left and right sides */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.organization-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribute items along the main axis */
+}
+
+.organization-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.organization-details h2 {
+    font-size: 60px;
+    margin-bottom: 10px;
+    font-family: "Glacial Indifference", sans-serif; /* Set the font to Glacial Indifference */
+    font-weight: 700; /* Use a bolder font weight */
+}
+
+.organization-details p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.social-media-buttons a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-family: "Glacial Indifference", sans-serif; /* Set the font to Glacial Indifference */
+}
+
+.social-media-buttons a:last-child {
+    margin-right: 0;
+}
+
+/* Remove underlines from anchor tags */
+a {
+    text-decoration: none;
+}
+
 /* Add styles for smaller screens */
 @media screen and (max-width: 600px) {
     .w3-bar-item {
         font-size: 4vw; /* Adjust font size for smaller screens */
+    }
+
+    .organization-info {
+        flex-direction: column; /* Stack the items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .organization-image img {
+        margin-right: 0; /* Remove the right margin */
+        margin-bottom: 20px; /* Add space between the image and text */
     }
 }
 
