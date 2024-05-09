@@ -166,10 +166,10 @@ footer a {
 }
 
 .organization-details h2 {
-    font-size: 60px;
-    margin-bottom: 10px;
+    font-size: 55px;
+    margin-bottom: 5px;
     font-family: "Glacial Indifference", sans-serif; /* Set the font to Glacial Indifference */
-    font-weight: 700; /* Use a bolder font weight */
+    font-weight: 600; /* Use a bolder font weight */
 }
 
 .organization-details p {
@@ -183,8 +183,8 @@ footer a {
     text-decoration: none;
     background-color: #007bff;
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 5px 20px;
+    border-radius: 20px;
     margin-right: 10px;
     font-family: "Glacial Indifference", sans-serif; /* Set the font to Glacial Indifference */
 }
