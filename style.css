@@ -23,7 +23,7 @@
 }
 
 .w3-bar-item {
-    font-size: 150%; /* Increase font size */
+    font-size: 140%; /* Increase font size */
     font-weight: 700; /* Use a bolder font weight */
     transition: font-size 0.7s ease; /* Add transition for smoother size change */
 }
@@ -199,9 +199,16 @@ a {
 }
 
 /* Add styles for smaller screens */
+@media screen and (max-width: 430px) {
+    .w3-bar-item {
+        font-size: 4vw; /* Adjust font size as needed */
+    }
+}
+
+/* Add styles for smaller screens */
 @media screen and (max-width: 600px) {
     .w3-bar-item {
-        font-size: 4vw; /* Adjust font size for smaller screens */
+        font-size: 3.5vw !important; /* Adjust font size for smaller screens */
     }
 
     .organization-info {
