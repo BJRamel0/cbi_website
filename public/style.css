@@ -1,6 +1,11 @@
 .nav-container {
     padding: 15px; /* Add padding around the entire navigation bar */
-  }
+}
+
+.logo-img {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintains aspect ratio */
+}
   
 
 .increased-height {
@@ -8,13 +13,14 @@
     display: flex;
     justify-content: space-between; /* Distribute items along the main axis */
     align-items: center; /* Vertically center items */
-    padding: 20px 20px; /* Add padding to the top, right, and left sides of the navigation bar */
+    padding: 40px 20px; /* Add padding to the top, right, and left sides of the navigation bar */
     background-color: #DDE8F0; /* Set the background color */
     font-family: "Glacial Indifference", sans-serif; /* Set the font to Glacial Indifference */
     position: relative; /* Add position relative */
     z-index: 3; /* Ensure the navigation bar is in the most front */
     border-top-left-radius: 20px; /* Add rounded corner to top left */
     border-top-right-radius: 20px; /* Add rounded corner to top right */
+    
 }
 
 .w3-button.w3-bar-item {
