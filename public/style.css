@@ -254,6 +254,7 @@ a {
 
 .filter-label {
     font-weight: bold;
+    font-size: 18px; /* Adjust the font size as needed */
 }
 
 .dropdown-content.show {
