@@ -3,11 +3,10 @@
 }
 
 .logo-img {
-    width: 50px; /* Adjust the width as needed */
+    width: 40px; /* Adjust the width as needed */
     height: auto; /* Maintains aspect ratio */
 }
   
-
 .increased-height {
     height: 70px; /* Adjust height value as needed */
     display: flex;
@@ -20,7 +19,6 @@
     z-index: 3; /* Ensure the navigation bar is in the most front */
     border-top-left-radius: 20px; /* Add rounded corner to top left */
     border-top-right-radius: 20px; /* Add rounded corner to top right */
-    
 }
 
 .w3-button.w3-bar-item {
@@ -204,10 +202,77 @@ a {
     text-decoration: none;
 }
 
+/* New styles for dropdown container and search input */
+
+.dropdown-container {
+    background-color: #DDE8F0;
+    padding: 10px;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Vertically center items */
+    justify-content: center; /* Horizontally center items */
+    height: 100%; /* Ensure the container takes up the full height */
+}
+
+.filter-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 7px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px; /* Add margin to the right */
+    border-radius: 10px; /* Add curved corners */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    margin-left: 20px; /* Adjust margin from the left */
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #DDE8F0;
+    min-width: 250px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    border-radius: 10px; /* Add curved corners */
+    z-index: 2;
+}
+
+#clubSearch {
+    width: 500px; /* Adjust width as needed */
+    border-radius: 10px; /* Add curved corners */
+    border: none;
+    padding-left: 30px; /* Adjust the padding to make room for the icon */
+    background-image: url('../public/image/magglas.png'); /* URL of the magnifying glass icon */
+    background-size: 14px; /* Adjust size of the icon */
+    background-repeat: no-repeat;
+    background-position: 8px center; /* Adjust the position of the icon */
+}
+
+.filter-label {
+    font-weight: bold;
+}
+
+.dropdown-content.show {
+    display: block !important;
+}
+
+.sub-dropdown {
+    padding-left: 20px;
+}
+
+.sub-dropdown span {
+    display: block;
+    font-weight: bold;
+}
+  
 /* Add styles for smaller screens */
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 420px) {
     .w3-bar-item {
-        font-size: 4vw; /* Adjust font size as needed */
+        font-size: 2.5vw !important; /* Adjust font size as needed */
     }
 }
 

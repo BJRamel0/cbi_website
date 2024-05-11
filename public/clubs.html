@@ -1,7 +1,5 @@
-<!-- home.html -->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,15 +9,14 @@
   <!-- Custom stylesheet -->
   <link href="style.css" rel="stylesheet">
 
-  <script src="./clubs.js"></script>
+  <script src="./clubs.js" defer></script>
 
+  <title>Clubs</title>
 </head>
 <body>
 
 <!-- Navigation -->
-
 <div class="nav-container">
-  <!-- Navigation -->
   <nav class="w3-bar increased-height">
     <a href='./home.html' class="w3-bar-item">
       <img src="./image/ibc-logo.png" alt="IBC Logo" class="logo-img">
@@ -30,12 +27,47 @@
     <a href='./events.html' class="w3-button w3-bar-item">Events</a>
   </nav>
 
-  <input type="text" id="clubSearch" placeholder="Search clubs...">
-  
+  <div class="dropdown-container">
+    <div class="dropdown">
+      <button class="filter-btn" id="filterDropdown">Filter Options</button>
+      <div class="dropdown-content" id="filterOptions">
+          <div class="filter-category" id="sizeCategory">
+              <span class="filter-label">Size</span>
+              <div class="sub-dropdown" style="display: none;">
+                  <label style="display: block;"><input type="checkbox" class="size-checkbox" value="small"> Small</label>
+                  <label style="display: block;"><input type="checkbox" class="size-checkbox" value="medium"> Medium</label>
+                  <label style="display: block;"><input type="checkbox" class="size-checkbox" value="large"> Large</label>
+              </div>
+          </div>
+          <div class="filter-category" id="exclusiveCategory">
+              <span class="filter-label">Exclusive</span>
+              <div class="sub-dropdown" style="display: none;">
+                  <label><input type="checkbox" class="exclusive-checkbox" value="exclusive"> Exclusive</label>
+              </div>
+          </div>
+          <div class="filter-category" id="majorCategory">
+              <span class="filter-label">Major</span>
+              <div class="sub-dropdown" style="display: none;">
+                  <label style="display: block;"><input type="checkbox" class="major-checkbox" value="accounting"> Accounting</label>
+                  <label style="display: block;"><input type="checkbox" class="major-checkbox" value="entrepreneurship"> Entrepreneurship</label>
+                  <label style="display: block;"><input type="checkbox" class="major-checkbox" value="finance"> Finance</label>
+                  <label style="display: block;"><input type="checkbox" class="major-checkbox" value="human resource management"> Human Resource Management</label>
+                  <label style="display: block;"><input type="checkbox" class="major-checkbox" value="international business"> International Business</label>
+                  <label style="display: block;"><input type="checkbox" class="major-checkbox" value="management"> Management</label>
+                  <label style="display: block;"><input type="checkbox" class="major-checkbox" value="management information systems"> Management Information Systems</label>
+                  <label style="display: block;"><input type="checkbox" class="major-checkbox" value="marketing"> Marketing</label>
+                  <label style="display: block;"><input type="checkbox" class="major-checkbox" value="travel industry management"> Travel Industry Management</label>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <input type="text" id="clubSearch" placeholder="Search clubs...">
+  </div>
+
   <!-- Organization Section -->
   <div id="clubInformation"></div>
   
-
   <!-- Footer -->
   <footer class="w3-container w3-padding-64 w3-center w3-xlarge">
     <a href="mailto:ibc@hawaii.edu" class="fa fa-envelope"></a>
@@ -44,8 +76,6 @@
     
     <p>Disclaimer: Although the Inter-Business Council has members who are University of Hawaii students, we are independent of the university and do not represent the views or values of the university. The Inter-Business Council is responsible for its own contracts, acts, or omissions. This statement is in accordance with Board of Regents Policy 7.203 </p>
   </footer>
-
-</div>
 
 </body>
 </html>
