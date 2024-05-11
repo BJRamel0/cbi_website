@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/all.min.css">
 
   <!-- Custom stylesheet -->
   <link href="style.css" rel="stylesheet">
@@ -29,10 +30,10 @@
 
   <div class="dropdown-container">
     <div class="dropdown">
-      <button class="filter-btn" id="filterDropdown">Filter Options</button>
+      <button class="filter-btn" id="filterDropdown">Filter <i class="fa fa-caret-down"></i></button>
       <div class="dropdown-content" id="filterOptions">
           <div class="filter-category" id="sizeCategory">
-              <span class="filter-label">Size</span>
+              <span class="filter-label">Size <i class="fa fa-caret-down"></i></span>
               <div class="sub-dropdown" style="display: none;">
                   <label style="display: block;"><input type="checkbox" class="size-checkbox" value="small"> Small</label>
                   <label style="display: block;"><input type="checkbox" class="size-checkbox" value="medium"> Medium</label>
@@ -40,13 +41,13 @@
               </div>
           </div>
           <div class="filter-category" id="exclusiveCategory">
-              <span class="filter-label">Exclusive</span>
+              <span class="filter-label">Exclusive <i class="fa fa-caret-down"></i></span>
               <div class="sub-dropdown" style="display: none;">
                   <label><input type="checkbox" class="exclusive-checkbox" value="exclusive"> Exclusive</label>
               </div>
           </div>
           <div class="filter-category" id="majorCategory">
-              <span class="filter-label">Major</span>
+              <span class="filter-label">Major <i class="fa fa-caret-down"></i></span>
               <div class="sub-dropdown" style="display: none;">
                   <label style="display: block;"><input type="checkbox" class="major-checkbox" value="accounting"> Accounting</label>
                   <label style="display: block;"><input type="checkbox" class="major-checkbox" value="entrepreneurship"> Entrepreneurship</label>
@@ -60,7 +61,7 @@
               </div>
           </div>
       </div>
-  </div>
+    </div>
 
     <input type="text" id="clubSearch" placeholder="Search clubs...">
   </div>
