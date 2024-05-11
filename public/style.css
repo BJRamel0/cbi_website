@@ -61,6 +61,7 @@
     margin-right: auto;
 }
 
+
 /* Slides */
 .mySlides {
     opacity: 0.5;
@@ -323,6 +324,154 @@ footer a {
     background-color: #BBCED8;
     border-radius: 5px;
 }
+
+/* Custom CSS for the event rectangle */
+.justify-content-center {
+    padding: 30px; /* Add padding as needed */
+}
+
+.custom-event-rectangle {
+    display: flex;
+    flex-direction: column;
+    width: 300px; /* Adjust width as needed */
+    height: 400px; /* Adjust height as needed */
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+  }
+  
+  .custom-event-rectangle .custom-event-image {
+    flex-grow: 1;
+    background-image: url('event-image.jpg'); /* Replace 'event-image.jpg' with your actual image path */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .custom-event-rectangle .custom-event-info {
+    padding: 20px;
+    background-color: white; /* White color for bottom part */
+    color: #333; /* Text color */
+    text-align: center; /* Center-align the text */
+    font-size: 1rem; /* Default font size for event details */
+}
+
+.w3-container {
+    padding-top: 20px; /* Add padding above the container */
+    background-color: #DDE8F0;
+}
+
+.custom-event-rectangle .custom-event-details {
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    background-color: #3366cc; /* Blue color for top part */
+    color: white;
+    padding: 20px;
+    text-align: center; /* Center-align the text */
+    height: 80px; /* Adjust the height as needed */
+}
+  
+  .custom-event-rectangle .custom-event-details h3,
+  .custom-event-rectangle .custom-event-info p {
+      font-weight: bold; /* Make the text bold */
+      margin: 0; /* Remove default margins */
+  }
+
+  .custom-event-details h3 {
+    font-size: 20px; /* Default font size */
+}
+  
+  .custom-event-rectangle .custom-event-info {
+    padding: 20px;
+    background-color: white; /* White color for bottom part */
+    color: #333; /* Text color */
+    height: 110px; /* Adjust the height as needed */
+  }
+
+  .custom-event-rectangle .custom-event-info p:last-child {
+    font-weight: normal; /* Make only the last <p> element (Spring 2023) not bold */
+}
+
+
+/* Additional CSS to center the event rectangles horizontally */
+.w3-row-padding.justify-content-center {
+    display: flex;
+    justify-content: center;
+}
+
+.w3-row-padding {
+    display: flex;
+    justify-content: center; /* Center-align the event rectangles horizontally */
+    flex-wrap: wrap; /* Allow wrapping of event rectangles */
+}
+
+.w3-col {
+    display: flex;
+    justify-content: center; /* Center-align the event rectangles horizontally */
+    margin-bottom: 20px; /* Add margin between event rectangles */
+}
+
+
+.w3-col.s4 {
+    display: flex;
+    justify-content: center;
+    width: calc(33.33% - 200px); /* Adjust width to occupy one-third of the container's width minus margins */
+    margin: 0 10px; /* Adjust margins as needed */
+}
+
+.w3-col.s12 {
+    width: 100%; /* Each event rectangle occupies full width on extra-small screens */
+}
+
+/* Updated CSS for arrow buttons */
+.navigation-buttons {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    margin-bottom: 20px; /* Add margin below the buttons */
+}
+
+.arrow-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 36px; /* Increase the size of the arrows */
+    color: #333; /* Adjust the color of the arrows */
+    position: absolute;
+    top: -250px; /* Position the arrows at the top of the container */
+}
+
+#prevButton {
+    left: 20px; /* Adjust the left position of the previous button */
+}
+
+#nextButton {
+    right: 20px; /* Adjust the right position of the next button */
+}
+
+@media screen and (max-width: 600px) {
+    .arrow-button {
+        font-size: 20px; /* Adjust the size of the arrows for smaller screens */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .arrow-button {
+        font-size: 20px; /* Adjust the size of the arrows for smaller screens */
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .w3-col.m6 {
+        width: 50%; /* Each event rectangle occupies half width on small screens and above */
+    }
+}
+
+@media screen and (min-width: 993px) {
+    .w3-col.l4 {
+        width: 33.33%; /* Each event rectangle occupies one-third width on medium screens and above */
+    }
+} 
 
 /* Media Queries */
 @media screen and (max-width: 420px) {
