@@ -23,17 +23,24 @@ async function populateClubs() {
                 const filteredClubs = clubs.filter(club => {
                     const nameMatch = club.name.toLowerCase().includes((query || '').toLowerCase());
                     const exclusiveMatch = !exclusiveOptions[0].checked || club.exclusive.toLowerCase() === 'yes';
-                    const majorMatch = Array.from(majorOptions).every(option => {
+                    const anyMajorSelected = Array.from(majorOptions).some(option => option.checked);
+        
+                    // Apply major filter if any major option is selected
+                    const majorMatch = !anyMajorSelected || Array.from(majorOptions).some(option => {
                         if (option.checked) {
                             const selectedMajor = option.value.toLowerCase();
                             const clubMajors = club.majors.toLowerCase().split(', ');
-                            return clubMajors.some(major => major.includes(selectedMajor));
+                            return clubMajors.includes(selectedMajor);
                         }
-                        return true; // If option is not checked, it's not a filter criterion
+                        return false; // If option is not checked, it's not a filter criterion
                     });
-                    const sizeMatch = !Array.from(sizeOptions).some(option => option.checked && club.size.toLowerCase() !== option.value);
+        
+                    const anySizeSelected = Array.from(sizeOptions).some(option => option.checked);
+                    const sizeMatch = !anySizeSelected || Array.from(sizeOptions).some(option => option.checked && club.size.toLowerCase() === option.value);
+        
                     return nameMatch && exclusiveMatch && majorMatch && sizeMatch;
                 });
+        
                 // Populate HTML with filtered clubs
                 filteredClubs.forEach(club => {
                     const container = document.createElement('div');
@@ -61,52 +68,50 @@ async function populateClubs() {
                 console.error('Error filtering clubs:', error);
             }
         }
+        
+
+    // Attach event listener to search input for live filtering
+    searchInput.addEventListener('input', () => {
+        filterClubs(searchInput.value);
+    });
 
 
+    // Function to handle filter button clicks
+    function handleFilterChange() {
+        // Apply filters
+        filterClubs(searchInput.value);
+    }
 
+    // Function to toggle display of filter options
+    function toggleFilterOptions() {
+        filterOptions.classList.toggle('show'); // Toggle the 'show' class
 
-// Attach event listener to search input for live filtering
-searchInput.addEventListener('input', () => {
-    filterClubs(searchInput.value);
-});
-
-
-        // Function to handle filter button clicks
-        function handleFilterChange() {
-            // Apply filters
-            filterClubs(searchInput.value);
-        }
-
-        // Function to toggle display of filter options
-        function toggleFilterOptions() {
-            filterOptions.classList.toggle('show'); // Toggle the 'show' class
-
-            // Toggle display of sub-dropdowns when clicking on the main filter
-            const subDropdowns = document.querySelectorAll('.sub-dropdown');
-            subDropdowns.forEach(subDropdown => {
-                subDropdown.classList.toggle('show'); // Toggle the 'show' class for sub-dropdowns
-            });
-        }
-
-        // Attach event listeners to filter options
-        filterDropdown.addEventListener('click', toggleFilterOptions); // Updated
-
-        // Attach event listeners to category labels to toggle options visibility
-        document.querySelectorAll('.filter-category').forEach(category => {
-            const label = category.querySelector('span');
-            const subDropdown = category.querySelector('.sub-dropdown');
-            label.addEventListener('click', function() {
-                subDropdown.style.display = subDropdown.style.display === 'block' ? 'none' : 'block'; // Toggle display
-            });
+        // Toggle display of sub-dropdowns when clicking on the main filter
+        const subDropdowns = document.querySelectorAll('.sub-dropdown');
+        subDropdowns.forEach(subDropdown => {
+            subDropdown.classList.toggle('show'); // Toggle the 'show' class for sub-dropdowns
         });
+    }
 
-        // Attach event listeners to checkboxes to trigger filtering
-        document.querySelectorAll('.size-checkbox, .exclusive-checkbox, .major-checkbox').forEach(checkbox => {
-            checkbox.addEventListener('change', handleFilterChange);
+    // Attach event listeners to filter options
+    filterDropdown.addEventListener('click', toggleFilterOptions); // Updated
+
+    // Attach event listeners to category labels to toggle options visibility
+    document.querySelectorAll('.filter-category').forEach(category => {
+        const label = category.querySelector('span');
+        const subDropdown = category.querySelector('.sub-dropdown');
+        label.addEventListener('click', function() {
+            subDropdown.style.display = subDropdown.style.display === 'block' ? 'none' : 'block'; // Toggle display
         });
+    });
 
-        // Populate clubs initially
-        filterClubs('');
+    // Attach event listeners to checkboxes to trigger filtering
+    document.querySelectorAll('.size-checkbox, .exclusive-checkbox, .major-checkbox').forEach(checkbox => {
+        checkbox.addEventListener('change', handleFilterChange);
+    });
+
+    // Populate clubs initially
+    filterClubs('');
 
     } catch (error) {
         console.error('Error fetching club information:', error);
