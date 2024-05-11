@@ -1,68 +1,82 @@
+/* General Styles */
 .nav-container {
-    padding: 15px; /* Add padding around the entire navigation bar */
+    padding: 15px;
 }
 
 .logo-img {
-    width: 40px; /* Adjust the width as needed */
-    height: auto; /* Maintains aspect ratio */
+    width: 40px;
+    height: auto;
 }
-  
+
 .increased-height {
-    height: 70px; /* Adjust height value as needed */
+    height: 70px;
     display: flex;
-    justify-content: space-between; /* Distribute items along the main axis */
-    align-items: center; /* Vertically center items */
-    padding: 40px 20px; /* Add padding to the top, right, and left sides of the navigation bar */
-    background-color: #DDE8F0; /* Set the background color */
-    font-family: "Glacial Indifference", sans-serif; /* Set the font to Glacial Indifference */
-    position: relative; /* Add position relative */
-    z-index: 3; /* Ensure the navigation bar is in the most front */
-    border-top-left-radius: 20px; /* Add rounded corner to top left */
-    border-top-right-radius: 20px; /* Add rounded corner to top right */
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #DDE8F0;
+    font-family: "Glacial Indifference", sans-serif;
+    position: relative;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: visible; /* Override overflow property */
+}
+
+.events-dropdown .dropdown-content {
+    right: 0;   
 }
 
 .w3-button.w3-bar-item {
     display: flex;
-    align-items: center; /* Vertically center items within the buttons */ 
+    align-items: center;
+    justify-content: center;
+}
+
+.events-dropdown button.w3-bar-item {
+    margin-left: -20px;
+    padding: 8px 10px; /* Adjust padding as needed */
 }
 
 .w3-button.w3-bar-item:hover {
-    background-color: #BBCED8; /* Change background color to grayblue when hovered */
-    border-radius: 5px; /* Apply border radius when hovered */
+    background-color: #BBCED8;
+    border-radius: 5px;
 }
 
 .w3-bar-item {
-    font-size: 140%; /* Increase font size */
-    font-weight: 700; /* Use a bolder font weight */
-    transition: font-size 0.7s ease; /* Add transition for smoother size change */
+    font-size: 140%;
+    font-weight: 700;
+    transition: font-size 0.7s ease;
+    margin: 0; /* Set margin to zero */
 }
 
 .increased-bar {
-    height: 200px; /* Adjust height value as needed */
+    height: 200px;
     display: flex;
-    padding: 0 20px; /* Add padding to the left and right sides of the navigation bar */
-    background-color: #DDE8F0; /* Set the background color */
+    padding: 0 20px;
+    background-color: #DDE8F0;
 }
 
 .w3-bar-item:first-child {
-    margin-left: 0; /* Reset margin for the CBI item */
-    margin-right: auto; /* Push the CBI item as far left as possible */
-}
-  
-.mySlides {
-    opacity: 0.5; /* Adjust opacity as needed */
-    position: relative; /* Set position to relative */
-    bottom: 0; /* Position the image at the bottom of its container */
-    width: 100%; /* Make the image span the entire width of its container */
-    z-index: 1; /* Ensure the image stays above other elements */
-    height: 70vh; /* Set the height to fill the viewport */
-    transition: transform 0.3s; /* Add transition effect for smoother position change */
-    object-fit: cover; /* Ensure the image covers its container while maintaining aspect ratio */
+    margin-left: 0;
+    margin-right: auto;
 }
 
+/* Slides */
+.mySlides {
+    opacity: 0.5;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    height: 70vh;
+    transition: transform 0.3s;
+    object-fit: cover;
+}
+
+/* Floating Text */
 .floating-text {
     position: absolute;
-    top: 30%; /* Place the top of the element at the middle of its container */
+    top: 30%;
     left: 0;
     width: 100%;
     display: flex;
@@ -74,82 +88,87 @@
 
 .floating-text h1 {
     font-family: "Glacial Indifference", sans-serif;
-    font-size: 6vw; /* Set font size using viewport width */
+    font-size: 6vw;
     font-weight: 700;
 }
 
 .floating-text img {
-    width: 15%; /* Adjust the width of the logo */
-    max-width: 130px; /* Set maximum width for the logo */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Adjust the margin between the logo and text */
+    width: 15%;
+    max-width: 130px;
+    height: auto;
+    margin-right: 10px;
 }
 
+/* Floating Carrot */
 .floating-carrot {
     position: absolute;
-    bottom: 0; /* Position at the bottom of the screen */
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 10%; /* Adjust the height to avoid covering the footer buttons */
+    height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: black;
-    z-index: 2; /* Ensure the text is above the image */
+    z-index: 2;
 }
 
 .floating-carrot img {
-    width: 55px; /* Adjust the width of the logo */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Adjust the margin between the logo and text */
-    padding: 50px 0; /* Add padding to the top, right, and left sides of the navigation bar */
+    width: 55px;
+    height: auto;
+    margin-right: 10px;
+    padding: 50px 0;
 }
 
-/* Add rounded corners to all elements with the class "rounded-square" */
+/* Rounded Square */
 .rounded-square {
-    border-radius: 10px; /* Adjust the value to change the roundness */
+    border-radius: 10px;
 }
 
+/* Row Padding */
 .w3-row-padding.w3-center {
-    background-color: #DDE8F0; /* Set the background color */
-    padding: 20px; /* Add padding to the section */
-    display: flex; /* Use flexbox */
-    justify-content: space-between; /* Distribute space between items */
+    background-color: #DDE8F0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .w3-row-padding.w3-center .w3-third h1 {
-    font-weight: bold; /* Bold the h1 elements within the .w3-third articles */
+    font-weight: bold;
 }
 
 .w3-row-padding.w3-center {
-    padding: 50px 0; /* Add padding to the top and bottom of the section */
+    padding: 50px 0;
 }
 
+/* Opportunities */
 .three-opportunities article img {
-    border-radius: 10px; /* Adjust the border radius as needed */
+    border-radius: 10px;
 }
 
 .three-opportunities article a {
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
 }
 
+/* Footer */
 footer {
-    background-color: #DDE8F0; /* Set the background color */
-    border-bottom-left-radius: 20px; /* Curve the bottom left corner */
-    border-bottom-right-radius: 20px; /* Curve the bottom right corner */
+    background-color: #DDE8F0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 footer p {
-    font-size: x-small; /* Reduce the font size */
+    font-size: x-small;
 }
 
 footer a {
-    text-decoration: none; /* Remove underline from anchor tags within the footer */
+    text-decoration: none;
 }
 
+/* Organization Section */
 .organization-section {
     background-color: #DDE8F0;
-    padding: 30px 10px; /* Add padding to the top and bottom, and 20px to the left and right sides */
+    padding: 30px 10px;
 }
 
 .container {
@@ -160,7 +179,7 @@ footer a {
 .organization-info {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Distribute items along the main axis */
+    justify-content: space-between;
 }
 
 .organization-image img {
@@ -173,8 +192,8 @@ footer a {
 .organization-details h2 {
     font-size: 44px;
     margin-bottom: 5px;
-    font-family: "Glacial Indifference", sans-serif; /* Set the font to Glacial Indifference */
-    font-weight: 600; /* Use a bolder font weight */
+    font-family: "Glacial Indifference", sans-serif;
+    font-weight: 600;
 }
 
 .organization-details p {
@@ -191,27 +210,22 @@ footer a {
     padding: 5px 20px;
     border-radius: 20px;
     margin-right: 10px;
-    font-family: "Glacial Indifference", sans-serif; /* Set the font to Glacial Indifference */
+    font-family: "Glacial Indifference", sans-serif;
 }
 
 .social-media-buttons a:last-child {
     margin-right: 0;
 }
 
-/* Remove underlines from anchor tags */
-a {
-    text-decoration: none;
-}
-
-/* New styles for dropdown container and search input */
-
+/* Dropdowns */
 .dropdown-container {
     background-color: #DDE8F0;
     padding: 10px;
-    display: flex; /* Use flexbox */
-    align-items: center; /* Vertically center items */
-    justify-content: center; /* Horizontally center items */
-    height: 100%; /* Ensure the container takes up the full height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    z-index: 10;
 }
 
 .filter-btn {
@@ -220,18 +234,18 @@ a {
     padding: 7px;
     border: none;
     cursor: pointer;
-    margin-right: 10px; /* Add margin to the right */
-    border-radius: 10px; /* Add curved corners */
-    white-space: nowrap; /* Prevent text wrapping */
+    margin-right: 10px;
+    border-radius: 10px;
+    white-space: nowrap;
 }
 
 .dropdown {
     position: relative;
     display: inline-block;
-    z-index: 1;
-    margin-left: 20px; /* Adjust margin from the left */
+    z-index: 20;
+    margin-left: 20px;
 }
-  
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -239,24 +253,24 @@ a {
     min-width: 250px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     padding: 12px 16px;
-    border-radius: 10px; /* Add curved corners */
+    border-radius: 10px;
     z-index: 2;
 }
 
 #clubSearch {
-    width: 600px; /* Adjust width as needed */
-    border-radius: 10px; /* Add curved corners */
+    width: 600px;
+    border-radius: 10px;
     border: none;
-    padding-left: 30px; /* Adjust the padding to make room for the icon */
-    background-image: url('../public/image/magglas.png'); /* URL of the magnifying glass icon */
-    background-size: 14px; /* Adjust size of the icon */
+    padding-left: 30px;
+    background-image: url('../public/image/magglas.png');
+    background-size: 14px;
     background-repeat: no-repeat;
-    background-position: 8px center; /* Adjust the position of the icon */
+    background-position: 8px center;
 }
 
 .filter-label {
     font-weight: bold;
-    font-size: 18px; /* Adjust the font size as needed */
+    font-size: 18px;
 }
 
 .dropdown-content.show {
@@ -271,50 +285,91 @@ a {
     display: block;
     font-weight: bold;
 }
-  
-/* Add styles for smaller screens */
+
+#eventsDropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #DDE8F0;
+    min-width: 89px; /* Set a minimum width */
+    width: auto; /* Let the width adjust based on content */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    left: 37%;
+    transform: translateX(-50%);
+    top: 100%;
+    margin-top: 5px;
+    z-index: 1000;
+    padding: 0px; /* Adjust padding as needed */ 
+}
+
+#eventsDropdown {
+    z-index: 15;
+}
+
+#eventsDropdownContent a {
+    display: block;
+    padding: 11px;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s;
+    font-weight: bold; /* Make the text bold */
+    font-size: 140%;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#eventsDropdownContent a:hover {
+    background-color: #BBCED8;
+    border-radius: 5px;
+}
+
+/* Media Queries */
 @media screen and (max-width: 420px) {
     .w3-bar-item {
-        font-size: 2.5vw !important; /* Adjust font size as needed */
+        font-size: 2.5vw !important;
     }
 }
 
-/* Add styles for smaller screens */
 @media screen and (max-width: 600px) {
-    .w3-bar-item {
-        font-size: 3.5vw !important; /* Adjust font size for smaller screens */
+    .w3-bar-item, #eventsDropdownContent a {
+        font-size: 3.5vw !important;
+    }
+
+    #eventsDropdownContent {
+        min-width: 63px; /* Set a minimum width */
+        left: 30%;
     }
 
     .organization-info {
-        flex-direction: column; /* Stack the items vertically */
-        align-items: center; /* Center items horizontally */
+        flex-direction: column;
+        align-items: center;
     }
 
-    .organization-info h2{
-        font-size: 7vw; /* Adjust font size for smaller screens */
+    .organization-info h2 {
+        font-size: 7vw;
     }
 
     .organization-image img {
-        margin-right: 0; /* Remove the right margin */
-        margin-bottom: 20px; /* Add space between the image and text */
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 }
 
-/* Media query for screens 800px or smaller */
 @media screen and (max-width: 800px) {
     .floating-text {
-        flex-direction: column; /* Stack the items vertically */
-        text-align: center; /* Center the text */
-        top: 28%; /* Place the top of the element at the middle of its container */
+        flex-direction: column;
+        text-align: center;
+        top: 28%;
     }
 
     .floating-text img {
-        order: -1; /* Move the image above the text */
-        margin-right: 0; /* Remove the right margin */
-        margin-bottom: 5px; /* Add space between the image and text */
+        order: -1;
+        margin-right: 0;
+        margin-bottom: 5px;
     }
 
     .floating-text h1 {
-        font-size: 7vw; /* Adjust font size for smaller screens */
+        font-size: 7vw;
     }
 }

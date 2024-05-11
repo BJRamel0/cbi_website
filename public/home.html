@@ -19,12 +19,20 @@
 <!-- Navigation -->
 
 <div class="nav-container">
-  <!-- Regular navigation items -->
   <nav class="w3-bar increased-height">
-      <a href='./home.html' class="w3-button w3-bar-item">IBC</a>
-      <a href='./about.html' class="w3-button w3-bar-item">About</a>
-      <a href='./clubs.html' class="w3-button w3-bar-item">Clubs</a>
-      <a href='./events.html' class="w3-button w3-bar-item">Events</a>
+    <a href='./home.html' class="w3-bar-item">
+      <img src="./image/ibc-logo.png" alt="IBC Logo" class="logo-img">
+    </a>
+    <a href='./home.html' class="w3-button w3-bar-item">Home</a>
+    <a href='./about.html' class="w3-button w3-bar-item">About</a>
+    <a href='./clubs.html' class="w3-button w3-bar-item">Clubs</a>
+    <div class="dropdown events-dropdown" id="eventsDropdown"> <!-- Unique ID added -->
+      <button class="w3-button w3-bar-item">Events</button>
+      <div class="dropdown-content" id="eventsDropdownContent"> <!-- Unique ID added -->
+        <a href="./club-events.html">Clubs</a>
+        <a href="./ibc-events.html">IBC</a>
+      </div>
+    </div>
   </nav>
 
   <nav class="w3-bar increased-bar">

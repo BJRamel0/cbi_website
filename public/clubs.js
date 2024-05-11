@@ -6,10 +6,12 @@ async function populateClubs() {
         const clubInfoContainer = document.getElementById('clubInformation');
         const searchInput = document.getElementById('clubSearch');
         const filterOptions = document.getElementById('filterOptions');
-        const filterDropdown = document.getElementById('filterDropdown'); // Added
+        const filterDropdown = document.getElementById('filterDropdown');
         const majorOptions = document.querySelectorAll('#majorCategory input[type="checkbox"]');
         const sizeOptions = document.querySelectorAll('#sizeCategory input[type="checkbox"]');
         const exclusiveOptions = document.querySelectorAll('#exclusiveCategory input[type="checkbox"]');
+        const eventsDropdownBtn = document.getElementById('eventsDropdown');
+        const eventsDropdownContent = document.getElementById('eventsDropdownContent');
 
         // Function to clear club information from the container
         function clearClubInfo() {
@@ -24,7 +26,7 @@ async function populateClubs() {
                     const nameMatch = club.name.toLowerCase().includes((query || '').toLowerCase());
                     const exclusiveMatch = !exclusiveOptions[0].checked || club.exclusive.toLowerCase() === 'yes';
                     const anyMajorSelected = Array.from(majorOptions).some(option => option.checked);
-        
+
                     // Apply major filter if any major option is selected
                     const majorMatch = !anyMajorSelected || Array.from(majorOptions).some(option => {
                         if (option.checked) {
@@ -34,13 +36,13 @@ async function populateClubs() {
                         }
                         return false; // If option is not checked, it's not a filter criterion
                     });
-        
+
                     const anySizeSelected = Array.from(sizeOptions).some(option => option.checked);
                     const sizeMatch = !anySizeSelected || Array.from(sizeOptions).some(option => option.checked && club.size.toLowerCase() === option.value);
-        
+
                     return nameMatch && exclusiveMatch && majorMatch && sizeMatch;
                 });
-        
+
                 // Populate HTML with filtered clubs
                 filteredClubs.forEach(club => {
                     const container = document.createElement('div');
@@ -68,50 +70,71 @@ async function populateClubs() {
                 console.error('Error filtering clubs:', error);
             }
         }
-        
 
-    // Attach event listener to search input for live filtering
-    searchInput.addEventListener('input', () => {
-        filterClubs(searchInput.value);
-    });
-
-
-    // Function to handle filter button clicks
-    function handleFilterChange() {
-        // Apply filters
-        filterClubs(searchInput.value);
-    }
-
-    // Function to toggle display of filter options
-    function toggleFilterOptions() {
-        filterOptions.classList.toggle('show'); // Toggle the 'show' class
-
-        // Toggle display of sub-dropdowns when clicking on the main filter
-        const subDropdowns = document.querySelectorAll('.sub-dropdown');
-        subDropdowns.forEach(subDropdown => {
-            subDropdown.classList.toggle('show'); // Toggle the 'show' class for sub-dropdowns
+        // Attach event listener to search input for live filtering
+        searchInput.addEventListener('input', () => {
+            filterClubs(searchInput.value);
         });
-    }
 
-    // Attach event listeners to filter options
-    filterDropdown.addEventListener('click', toggleFilterOptions); // Updated
+        // Function to handle filter button clicks
+        function handleFilterChange() {
+            // Apply filters
+            filterClubs(searchInput.value);
+        }
 
-    // Attach event listeners to category labels to toggle options visibility
-    document.querySelectorAll('.filter-category').forEach(category => {
-        const label = category.querySelector('span');
-        const subDropdown = category.querySelector('.sub-dropdown');
-        label.addEventListener('click', function() {
-            subDropdown.style.display = subDropdown.style.display === 'block' ? 'none' : 'block'; // Toggle display
+        // Function to toggle display of filter options
+        function toggleFilterOptions() {
+            filterOptions.classList.toggle('show'); // Toggle the 'show' class
+
+            // Toggle display of sub-dropdowns when clicking on the main filter
+            const subDropdowns = document.querySelectorAll('.sub-dropdown');
+            subDropdowns.forEach(subDropdown => {
+                subDropdown.classList.toggle('show'); // Toggle the 'show' class for sub-dropdowns
+            });
+        }
+
+        // Attach event listeners to filter options
+        filterDropdown.addEventListener('click', toggleFilterOptions);
+
+        // Attach event listeners to category labels to toggle options visibility
+        document.querySelectorAll('.filter-category').forEach(category => {
+            const label = category.querySelector('span');
+            const subDropdown = category.querySelector('.sub-dropdown');
+            label.addEventListener('click', function() {
+                subDropdown.style.display = subDropdown.style.display === 'block' ? 'none' : 'block'; // Toggle display
+            });
         });
-    });
 
-    // Attach event listeners to checkboxes to trigger filtering
-    document.querySelectorAll('.size-checkbox, .exclusive-checkbox, .major-checkbox').forEach(checkbox => {
-        checkbox.addEventListener('change', handleFilterChange);
-    });
+        // Attach event listeners to checkboxes to trigger filtering
+        document.querySelectorAll('.size-checkbox, .exclusive-checkbox, .major-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', handleFilterChange);
+        });
 
-    // Populate clubs initially
-    filterClubs('');
+        // Populate clubs initially
+        filterClubs('');
+
+        // Event listener for events dropdown button
+        eventsDropdownBtn.addEventListener('click', function() {
+            eventsDropdownContent.classList.toggle('show');
+        });
+
+        // Event listener to close the dropdown when clicking outside of it
+        window.addEventListener('click', function(event) {
+            if (!event.target.closest('.events-dropdown')) {
+                if (eventsDropdownContent.classList.contains('show')) {
+                    eventsDropdownContent.classList.remove('show');
+                }
+            }
+        });
+
+        // Event listener for dropdown options
+        document.querySelectorAll('#eventsDropdownContent a').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default behavior
+                const href = this.getAttribute('href'); // Get href attribute
+                window.location.href = href; // Navigate to the URL
+            });
+        });
 
     } catch (error) {
         console.error('Error fetching club information:', error);
