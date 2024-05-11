@@ -449,6 +449,40 @@ footer a {
     right: 20px; /* Adjust the right position of the next button */
 }
 
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.carousel-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #ccc; /* Gray color */
+    border-radius: 50%;
+    margin: 0 5px; /* Adjust margin as needed */
+    cursor: pointer;
+}
+
+.carousel-dot.active {
+    background-color: #333; /* Black color for active dot */
+}
+
+.club-events-title {
+    text-align: center; /* Center-align the text */
+    background-color: #DDE8F0;
+    margin-top: 0; /* Remove top margin */
+    margin-bottom: 0; /* Remove bottom margin */
+    padding-top: 20px; /* Add padding to the top */
+    padding-bottom: 20px; /* Add padding to the bottom */
+}
+
+.club-events-title h1 {
+    font-size: 75px; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the text bold */
+  }
+
+
 @media screen and (max-width: 600px) {
     .arrow-button {
         font-size: 20px; /* Adjust the size of the arrows for smaller screens */
@@ -457,7 +491,11 @@ footer a {
 
 @media screen and (max-width: 600px) {
     .arrow-button {
-        font-size: 20px; /* Adjust the size of the arrows for smaller screens */
+        font-size: 30px; /* Adjust the size of the arrows for smaller screens */
+    }
+
+    .club-events-title h1 {
+        font-size: 50px; /* Adjust font size for smaller screens */
     }
 }
 

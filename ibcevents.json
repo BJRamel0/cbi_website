@@ -1,0 +1,65 @@
+[
+	{
+		"name": "Shidler Recruitment Week",
+		"image": "../public/image/clubgp/acgp.png",
+		"alt": "Shidler Recruitment Week",
+        "organization": "",
+		"when": "Spring 2023"
+	},
+    {
+		"name": "Super Clubs Day (SCD)",
+		"image": "../public/image/clubgp/acgp.png",
+		"alt": "Super Clubs Day (SCD)",
+        "organization": "",
+		"when": "Fall 2023"
+	},
+    {
+		"name": "Back to Business",
+		"image": "../public/image/clubgp/acgp.png",
+		"alt": "Back to Business",
+        "organization": "",
+		"when": "Spring 2023"
+	},
+	{
+		"name": "Shidler Beautification",
+		"image": "../public/image/clubgp/acgp.png",
+		"alt": "Shidler Beautification",
+        "organization": "",
+		"when": "Fall 2023"
+	},
+	{
+		"name": "rExecutive Board Mixe",
+		"image": "../public/image/clubgp/acgp.png",
+		"alt": "rExecutive Board Mixe",
+        "organization": "",
+		"when": "Fall 2023"
+	},
+	{
+		"name": "Executive Board Retreat",
+		"image": "../public/image/clubgp/acgp.png",
+		"alt": "Executive Board Retreat",
+        "organization": "",
+		"when": "Spring 2023"
+	},
+	{
+		"name": "Professional Workshop",
+		"image": "../public/image/clubgp/acgp.png",
+		"alt": "Professional Workshop",
+        "organization": "",
+		"when": "Fall 2023"
+	},
+	{
+		"name": "Community Service",
+		"image": "../public/image/clubgp/acgp.png",
+		"alt": "Community Service",
+        "organization": "",
+		"when": "Spring 2024"
+	},
+	{
+		"name": "SCD Fundraiser",
+		"image": "../public/image/clubgp/acgp.png",
+		"alt": "SCD Fundraiser",
+        "organization": "",
+		"when": "Fall 2023"
+	}
+]

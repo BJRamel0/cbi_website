@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             eventsData = await response.json();
             renderEvents();
+            createCarouselDots(); // Call createCarouselDots after fetching data
         } catch (error) {
             console.error(error);
         }
@@ -94,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
             currentIndex = 0;
         }
         renderEvents();
+        updateCarouselDots(); // Call updateCarouselDots after moving to next page
     }
 
     // Function to handle click on previous button
@@ -103,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
             currentIndex = Math.max(0, Math.floor((eventsData.length - 1) / itemsPerPage) * itemsPerPage);
         }
         renderEvents();
+        updateCarouselDots(); // Call updateCarouselDots after moving to previous page
     }
 
     // Event listener for next button
@@ -118,15 +121,17 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('resize', function() {
         setItemsPerPage();
         renderEvents();
+        createCarouselDots(); // Recreate dots on window resize
     });
 
     // Initialize itemsPerPage
     setItemsPerPage();
     renderEvents();
+    createCarouselDots(); // Create dots initially
 
     // Change button color when window width is less than 390px
     window.addEventListener('resize', function() {
-        if (window.innerWidth <= 415) {
+        if (window.innerWidth <= 430) {
             document.getElementById('nextButton').style.color = 'white';
             document.getElementById('prevButton').style.color = 'white';
         } else {
@@ -135,4 +140,38 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Function to create carousel dots
+    function createCarouselDots() {
+        const dotsContainer = document.querySelector('.carousel-dots');
+        dotsContainer.innerHTML = ''; // Clear existing dots
+
+        for (let i = 0; i < Math.ceil(eventsData.length / itemsPerPage); i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('carousel-dot');
+            if (i === currentIndex / itemsPerPage) {
+                dot.classList.add('active'); // Set the current page dot as active
+            }
+            dot.addEventListener('click', () => {
+                currentIndex = i * itemsPerPage;
+                renderEvents();
+                updateCarouselDots();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    // Function to update carousel dots
+    function updateCarouselDots() {
+        const dots = document.querySelectorAll('.carousel-dot');
+        dots.forEach((dot, index) => {
+            if (index === currentIndex / itemsPerPage) {
+                dot.classList.add('active'); // Set the current page dot as active
+            } else {
+                dot.classList.remove('active'); // Remove active class from other dots
+            }
+        });
+    }
+
 });
+
+
