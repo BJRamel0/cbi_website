@@ -26,6 +26,11 @@
     align-items: center; /* Vertically center items within the buttons */ 
 }
 
+.w3-button.w3-bar-item:hover {
+    background-color: #BBCED8; /* Change background color to grayblue when hovered */
+    border-radius: 5px; /* Apply border radius when hovered */
+}
+
 .w3-bar-item {
     font-size: 140%; /* Increase font size */
     font-weight: 700; /* Use a bolder font weight */
