@@ -462,6 +462,7 @@ footer a {
     border-radius: 50%;
     margin: 0 5px; /* Adjust margin as needed */
     cursor: pointer;
+    margin-bottom: 10px; /* Remove bottom margin */
 }
 
 .carousel-dot.active {
@@ -482,6 +483,36 @@ footer a {
     font-weight: bold; /* Make the text bold */
   }
 
+  /* Style for the Google Calendar Container */
+.google-calendar-container {
+    background-color: #DDE8F0; /* Blue background color */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 0px; /* Adjust as needed */
+    padding: 20px; /* Add padding to create space around the calendar */
+  }
+  
+  /* Style for the Google Calendar iframe */
+  .google-calendar-container iframe {
+    width: 800px; /* Adjust width as needed */
+    height: 600px; /* Adjust height as needed */
+  }
+
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .google-calendar-container iframe {
+      height: 60vh; /* Decrease height for smaller screens */
+    }
+  }
+  
+  /* Media Query for even smaller screens */
+  @media screen and (max-width: 480px) {
+    .google-calendar-container iframe {
+      height: 50vh; /* Further decrease height for even smaller screens */
+    }
+  }
 
 @media screen and (max-width: 600px) {
     .arrow-button {
