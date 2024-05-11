@@ -38,10 +38,6 @@
     padding: 0 20px; /* Add padding to the left and right sides of the navigation bar */
     background-color: #DDE8F0; /* Set the background color */
 }
-  
-.w3-bar-item {
-    margin-left: 10px; /* Adjust margin as needed for spacing */
-}
 
 .w3-bar-item:first-child {
     margin-left: 0; /* Reset margin for the CBI item */
@@ -221,6 +217,7 @@ a {
     cursor: pointer;
     margin-right: 10px; /* Add margin to the right */
     border-radius: 10px; /* Add curved corners */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 .dropdown {
