@@ -1,63 +1,63 @@
 [
 	{
 		"name": "Professional Interaction Night (PIN)",
-		"image": "../public/image/clubgp/acgp.png",
+		"image": "../public/image/clubevents/bestpin.jpg",
 		"alt": "BEST PIN Group Photo",
         "organization": "Best Executive Society of Tomorrow (BEST)",
 		"when": "Spring 2023"
 	},
     {
 		"name": "Mock Interview",
-		"image": "../public/image/clubgp/acgp.png",
+		"image": "../public/image/clubevents/shrmmi.jpg",
 		"alt": "SHRM Mock Group Photo",
         "organization": "Society for Human Resource Managment (SHRM)",
 		"when": "Fall 2023"
 	},
     {
 		"name": "Aloha Banquet",
-		"image": "../public/image/clubgp/acgp.png",
+		"image": "../public/image/clubevents/iboab.png",
 		"alt": "IBO Aloha Banquet Group Photo",
         "organization": "International Business Organization (IBO)",
 		"when": "Spring 2023"
 	},
 	{
 		"name": "Community Service",
-		"image": "../public/image/clubgp/acgp.png",
+		"image": "../public/image/clubevents/amacs.png",
 		"alt": "AMA justsmallkinethings Community Service Group Photo",
         "organization": "American Marketing Association (AMA)",
 		"when": "justsmallkinethings - Fall 2023"
 	},
 	{
 		"name": "Socials",
-		"image": "../public/image/clubgp/acgp.png",
+		"image": "../public/image/clubevents/fmabs.png",
 		"alt": "FMA Beach BBQ Social Group Photo",
         "organization": "Financial Management Association (FMA)",
 		"when": "Beach BBQ Social - Fall 2023"
 	},
 	{
 		"name": "Company Tours",
-		"image": "../public/image/clubgp/acgp.png",
+		"image": "../public/image/clubevents/hsect.jpg",
 		"alt": "HSE Pono Potions Company Tours Group Photo",
         "organization": "Hawaii State Entrepreneurs (HSE)",
 		"when": "Pono Potions - Spring 2023"
 	},
 	{
 		"name": "Workshops",
-		"image": "../public/image/clubgp/acgp.png",
+		"image": "../public/image/clubevents/recws.jpg",
 		"alt": "REC TPC Stonebrae Workshops Group Photo",
         "organization": "Real Estate Club (REC)",
 		"when": "TPC Stonebrae - Fall 2023"
 	},
 	{
 		"name": "General Meetings",
-		"image": "../public/image/clubgp/acgp.png",
+		"image": "../public/image/clubevents/bapgm.png",
 		"alt": "BAP General Meeting #2 Group Photo",
         "organization": "Beta Alpha Psi (BAP)",
 		"when": "General Meeting #2 - Spring 2024"
 	},
 	{
 		"name": "Fundraising",
-		"image": "../public/image/clubgp/acgp.png",
+		"image": "../public/image/clubevents/accw.png",
 		"alt": "AC Car Wash Fundraising Group Photo",
         "organization": "Accounting Club [AC]",
 		"when": "Car Wash - Fall 2023"
