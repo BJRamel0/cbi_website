@@ -13,6 +13,8 @@ async function populateClubs() {
         const eventsDropdownBtn = document.getElementById('eventsDropdown');
         const eventsDropdownContent = document.getElementById('eventsDropdownContent');
 
+        let activeFilters = []; // Array to store active filters
+
         // Function to clear club information from the container
         function clearClubInfo() {
             clubInfoContainer.innerHTML = '';
@@ -91,6 +93,11 @@ async function populateClubs() {
             subDropdowns.forEach(subDropdown => {
                 subDropdown.classList.toggle('show'); // Toggle the 'show' class for sub-dropdowns
             });
+
+            // Adjust dropdown content width based on active filters
+            const selectedFilters = activeFilters.filter(filter => filter !== 'major');
+            const width = selectedFilters.length > 0 ? '100px' : 'auto';
+            filterOptions.style.width = width;
         }
 
         // Attach event listeners to filter options
@@ -107,7 +114,17 @@ async function populateClubs() {
 
         // Attach event listeners to checkboxes to trigger filtering
         document.querySelectorAll('.size-checkbox, .exclusive-checkbox, .major-checkbox').forEach(checkbox => {
-            checkbox.addEventListener('change', handleFilterChange);
+            checkbox.addEventListener('change', function() {
+                // Update active filters array
+                const filterType = this.getAttribute('data-filter-type');
+                if (this.checked && !activeFilters.includes(filterType)) {
+                    activeFilters.push(filterType);
+                } else if (!this.checked && activeFilters.includes(filterType)) {
+                    const index = activeFilters.indexOf(filterType);
+                    activeFilters.splice(index, 1);
+                }
+                handleFilterChange(); // Apply filters
+            });
         });
 
         // Populate clubs initially
