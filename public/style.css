@@ -152,8 +152,7 @@
 }
 
 .three-opportunities article p {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 0 10px; /* Adjust the padding values as needed */
 }
 
 /* Footer */
