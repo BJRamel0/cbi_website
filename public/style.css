@@ -151,6 +151,11 @@
     text-decoration: none;
 }
 
+.three-opportunities article p {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 /* Footer */
 footer {
     background-color: #DDE8F0;
