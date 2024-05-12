@@ -152,12 +152,12 @@
 }
 
 .three-opportunities article h1 {
-  margin-bottom: 10px !important; /* Adjust margin between h1 titles and p elements */
+  margin-bottom: 10px; /* Adjust margin between h1 titles and p elements */
 }
 
 .three-opportunities article p {
   padding: 0 10px !important; /* Adjust the padding values as needed */
-  margin-bottom: 20px !important; /* Add margin below the p elements */
+  margin-bottom: 20px; /* Add margin below the p elements */
 }
 
 /* Footer */
