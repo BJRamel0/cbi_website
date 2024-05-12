@@ -8,6 +8,7 @@
     height: auto;
 }
 
+/* Header Styles */
 .increased-height {
     height: 70px;
     display: flex;
@@ -60,7 +61,6 @@
     margin-left: 0;
     margin-right: auto;
 }
-
 
 /* Slides */
 .mySlides {
@@ -127,11 +127,12 @@
 }
 
 /* Row Padding */
-.w3-row-padding.w3-center {
-    background-color: #DDE8F0;
-    padding: 20px;
+.w3-row-padding {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px; /* Adjust padding as needed */
+    margin: 0 -5px; /* Adjust margins to create space between columns */
 }
 
 .w3-row-padding.w3-center .w3-third h1 {
@@ -353,6 +354,7 @@ footer a {
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+    margin: 10px; /* Adjust margin between rectangles */
   }
   
   .custom-event-rectangle .custom-event-image {
@@ -422,16 +424,16 @@ footer a {
 
 .w3-col {
     display: flex;
-    justify-content: center; /* Center-align the event rectangles horizontally */
-    margin-bottom: 20px; /* Add margin between event rectangles */
+    justify-content: center;
+    margin-bottom: 10px; /* Reduce margin between event rectangles */
+    padding: 0 5px; /* Adjust padding to create space between columns */
 }
-
 
 .w3-col.s4 {
     display: flex;
     justify-content: center;
-    width: calc(33.33% - 200px); /* Adjust width to occupy one-third of the container's width minus margins */
-    margin: 0 10px; /* Adjust margins as needed */
+    width: calc(33.33% - 10px); /* Adjust width to occupy one-third of the container's width minus margins */
+    margin: 0 5px; /* Adjust margins as needed */
 }
 
 .w3-col.s12 {
