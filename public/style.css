@@ -157,7 +157,7 @@
 }
 
 .three-opportunities article p {
-  padding: 0 10px !important; /* Adjust the padding values as needed */
+  padding: 0 40px !important; /* Adjust the padding values as needed */
   margin-bottom: 20px; /* Add margin below the p elements */
 }
 
@@ -272,7 +272,7 @@ footer a {
     position: absolute;
     background-color: #DDE8F0;
     width: 140px; /* Default width */
-    min-width: 140px; /* Minimum width */
+    min-width: 150px; /* Minimum width */
     max-width: 250px; /* Maximum width */
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     padding: 12px 16px;
@@ -349,6 +349,17 @@ footer a {
     background-color: #BBCED8;
     border-radius: 5px;
 }
+
+/* Show dropdown content when hovering over the dropdown button */
+.club-description-dropdown:hover .club-dropdown-content {
+    display: block;
+}
+
+/* Style the dropdown button on hover */
+.club-description-dropdown:hover .club-dropdown-btn {
+    background-color: #ddd;
+}
+
 
 /* Custom CSS for the event rectangle */
 .justify-content-center {

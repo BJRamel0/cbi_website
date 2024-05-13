@@ -20,9 +20,49 @@ async function populateClubs() {
             clubInfoContainer.innerHTML = '';
         }
 
+        // Function to populate HTML with clubs
+        function populateClubInfo(club, container) {
+            const clubContainer = document.createElement('div');
+            clubContainer.classList.add('organization-section');
+            clubContainer.innerHTML = `
+                <div class="container">
+                    <div class="organization-info">
+                        <div class="organization-image">
+                            <img src="${club.image}" alt="${club.alt}">
+                        </div>
+                        <div class="organization-details">
+                            <h2>${club.name}</h2>
+                            <div class="social-media-buttons">
+                                <a href="${club.website}" target="_blank">Website</a>
+                                <a href="${club.instagram}" target="_blank">Instagram</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.appendChild(clubContainer);
+
+            const descriptionContainer = clubContainer.querySelector('.organization-details');
+
+            if (window.innerWidth < 800) {
+                createDescriptionDropdown(club.description, descriptionContainer);
+            } else {
+                const descriptionParagraph = document.createElement('p');
+                descriptionParagraph.textContent = club.description;
+                descriptionContainer.appendChild(descriptionParagraph);
+            }
+        }
+
+        // Function to populate filtered clubs
+        function populateFilteredClubs(filteredClubs, container) {
+            container.innerHTML = ''; // Clear existing club information
+            filteredClubs.forEach(club => {
+                populateClubInfo(club, container);
+            });
+        }
+
         // Function to filter clubs based on search query, size, exclusivity, and majors
         function filterClubs(query) {
-            clearClubInfo(); // Clear existing club information
             try {
                 const filteredClubs = clubs.filter(club => {
                     const nameMatch = club.name.toLowerCase().includes((query || '').toLowerCase());
@@ -46,28 +86,7 @@ async function populateClubs() {
                 });
 
                 // Populate HTML with filtered clubs
-                filteredClubs.forEach(club => {
-                    const container = document.createElement('div');
-                    container.classList.add('organization-section');
-                    container.innerHTML = `
-                        <div class="container">
-                            <div class="organization-info">
-                                <div class="organization-image">
-                                    <img src="${club.image}" alt="${club.alt}">
-                                </div>
-                                <div class="organization-details">
-                                    <h2>${club.name}</h2>
-                                    <div class="social-media-buttons">
-                                        <a href="${club.website}" target="_blank">Website</a>
-                                        <a href="${club.instagram}" target="_blank">Instagram</a>
-                                    </div>
-                                    <p>${club.description}</p>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                    clubInfoContainer.appendChild(container);
-                });
+                populateFilteredClubs(filteredClubs, clubInfoContainer);
             } catch (error) {
                 console.error('Error filtering clubs:', error);
             }
@@ -76,40 +95,6 @@ async function populateClubs() {
         // Attach event listener to search input for live filtering
         searchInput.addEventListener('input', () => {
             filterClubs(searchInput.value);
-        });
-
-        // Function to handle filter button clicks
-        function handleFilterChange() {
-            // Apply filters
-            filterClubs(searchInput.value);
-        }
-
-        // Function to toggle display of filter options
-        function toggleFilterOptions() {
-            filterOptions.classList.toggle('show'); // Toggle the 'show' class
-
-            // Toggle display of sub-dropdowns when clicking on the main filter
-            const subDropdowns = document.querySelectorAll('.sub-dropdown');
-            subDropdowns.forEach(subDropdown => {
-                subDropdown.classList.toggle('show'); // Toggle the 'show' class for sub-dropdowns
-            });
-
-            // Adjust dropdown content width based on active filters
-            const selectedFilters = activeFilters.filter(filter => filter !== 'major');
-            const width = selectedFilters.length > 0 ? '100px' : 'auto';
-            filterOptions.style.width = width;
-        }
-
-        // Attach event listeners to filter options
-        filterDropdown.addEventListener('click', toggleFilterOptions);
-
-        // Attach event listeners to category labels to toggle options visibility
-        document.querySelectorAll('.filter-category').forEach(category => {
-            const label = category.querySelector('span');
-            const subDropdown = category.querySelector('.sub-dropdown');
-            label.addEventListener('click', function() {
-                subDropdown.style.display = subDropdown.style.display === 'block' ? 'none' : 'block'; // Toggle display
-            });
         });
 
         // Attach event listeners to checkboxes to trigger filtering
@@ -123,35 +108,12 @@ async function populateClubs() {
                     const index = activeFilters.indexOf(filterType);
                     activeFilters.splice(index, 1);
                 }
-                handleFilterChange(); // Apply filters
+                filterClubs(searchInput.value); // Apply filters
             });
         });
 
         // Populate clubs initially
         filterClubs('');
-
-        // Event listener for events dropdown button
-        eventsDropdownBtn.addEventListener('click', function() {
-            eventsDropdownContent.classList.toggle('show');
-        });
-
-        // Event listener to close the dropdown when clicking outside of it
-        window.addEventListener('click', function(event) {
-            if (!event.target.closest('.events-dropdown')) {
-                if (eventsDropdownContent.classList.contains('show')) {
-                    eventsDropdownContent.classList.remove('show');
-                }
-            }
-        });
-
-        // Event listener for dropdown options
-        document.querySelectorAll('#eventsDropdownContent a').forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault(); // Prevent default behavior
-                const href = this.getAttribute('href'); // Get href attribute
-                window.location.href = href; // Navigate to the URL
-            });
-        });
 
     } catch (error) {
         console.error('Error fetching club information:', error);

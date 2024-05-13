@@ -172,6 +172,42 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Select the events container
+    const eventsContainer = document.querySelector('.w3-row-padding');
+
+    // Initialize variables
+    let startX = 0;
+    let endX = 0;
+    let touchStarted = false;
+
+    // Function to handle touch start event
+    function handleTouchStart(event) {
+        startX = event.touches[0].clientX;
+        touchStarted = true;
+    }
+
+    // Function to handle touch move event
+    function handleTouchMove(event) {
+        if (!touchStarted) return;
+        endX = event.touches[0].clientX;
+    }
+
+    // Function to handle touch end event
+    function handleTouchEnd() {
+        if (!touchStarted) return;
+        touchStarted = false;
+        const threshold = Math.abs(startX - endX);
+        if (threshold > 50) { // Adjust threshold as needed
+            if (endX < startX) {
+                nextButtonHandler(); // Swipe left, move to next page
+            } else {
+                prevButtonHandler(); // Swipe right, move to previous page
+            }
+        }
+    }
+
+    // Add touch event listeners to events container
+    eventsContainer.addEventListener('touchstart', handleTouchStart);
+    eventsContainer.addEventListener('touchmove', handleTouchMove);
+    eventsContainer.addEventListener('touchend', handleTouchEnd);
 });
-
-
