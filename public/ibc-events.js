@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to fetch event data from JSON file
     async function fetchEventData() {
         try {
-            const response = await fetch('../ibcevents.json'); // Assuming the JSON file is named events.json
+            const response = await fetch('../ibcevents.json'); // Assuming the JSON file is named ibcevents.json
             if (!response.ok) {
                 throw new Error('Failed to fetch event data');
             }
@@ -172,6 +172,40 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Touch event handling
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    // Function to handle touch start event
+    function handleTouchStart(event) {
+        touchStartX = event.touches[0].clientX;
+    }
+
+    // Function to handle touch move event
+    function handleTouchMove(event) {
+        touchEndX = event.touches[0].clientX;
+    }
+
+    // Function to handle touch end event and determine swipe direction
+    function handleTouchEnd() {
+        const threshold = 50; // Minimum distance for swipe gesture
+
+        // Calculate swipe distance
+        const swipeDistance = touchEndX - touchStartX;
+
+        // Check if the swipe distance is greater than the threshold
+        if (Math.abs(swipeDistance) > threshold) {
+            if (swipeDistance < 0) {
+                nextButtonHandler(); // Swipe left, move to next page
+            } else {
+                prevButtonHandler(); // Swipe right, move to previous page
+            }
+        }
+    }
+
+    // Add touch event listeners to document
+    document.addEventListener('touchstart', handleTouchStart);
+    document.addEventListener('touchmove', handleTouchMove);
+    document.addEventListener('touchend', handleTouchEnd);
+
 });
-
-
