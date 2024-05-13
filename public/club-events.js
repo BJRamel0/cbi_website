@@ -172,33 +172,30 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Select the events container
-    const eventsContainer = document.querySelector('.w3-row-padding');
-
-    // Initialize variables
-    let startX = 0;
-    let endX = 0;
-    let touchStarted = false;
+    // Touch event handling
+    let touchStartX = 0;
+    let touchEndX = 0;
 
     // Function to handle touch start event
     function handleTouchStart(event) {
-        startX = event.touches[0].clientX;
-        touchStarted = true;
+        touchStartX = event.touches[0].clientX;
     }
 
     // Function to handle touch move event
     function handleTouchMove(event) {
-        if (!touchStarted) return;
-        endX = event.touches[0].clientX;
+        touchEndX = event.touches[0].clientX;
     }
 
-    // Function to handle touch end event
+    // Function to handle touch end event and determine swipe direction
     function handleTouchEnd() {
-        if (!touchStarted) return;
-        touchStarted = false;
-        const threshold = Math.abs(startX - endX);
-        if (threshold > 50) { // Adjust threshold as needed
-            if (endX < startX) {
+        const threshold = 50; // Minimum distance for swipe gesture
+
+        // Calculate swipe distance
+        const swipeDistance = touchEndX - touchStartX;
+
+        // Check if the swipe distance is greater than the threshold
+        if (Math.abs(swipeDistance) > threshold) {
+            if (swipeDistance < 0) {
                 nextButtonHandler(); // Swipe left, move to next page
             } else {
                 prevButtonHandler(); // Swipe right, move to previous page
@@ -206,8 +203,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Add touch event listeners to events container
-    eventsContainer.addEventListener('touchstart', handleTouchStart);
-    eventsContainer.addEventListener('touchmove', handleTouchMove);
-    eventsContainer.addEventListener('touchend', handleTouchEnd);
+    // Add touch event listeners to document
+    document.addEventListener('touchstart', handleTouchStart);
+    document.addEventListener('touchmove', handleTouchMove);
+    document.addEventListener('touchend', handleTouchEnd);
+
 });
